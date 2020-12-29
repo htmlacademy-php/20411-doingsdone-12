@@ -37,7 +37,7 @@ $tasks = [
     ],
     [
         'name' => 'Заказать пиццу',
-        'date_of_imlementation' => 'null',
+        'date_of_imlementation' => null,
         'category' => 'Домашние дела',
         'done' => false
     ]
@@ -126,19 +126,20 @@ $tasks = [
                 </div>
 
                 <table class="tasks">
+                   <?php foreach ($tasks as $key => $value): ?>
                     <tr class="tasks__item task">
                         <td class="task__select">
                             <label class="checkbox task__checkbox">
                                 <input class="checkbox__input visually-hidden task__checkbox" type="checkbox" value="1">
-                                <span class="checkbox__text">Сделать главную страницу Дела в порядке</span>
+                                <span class="checkbox__text"><?=$value['name'];?></span>
                             </label>
                         </td>
-
                         <td class="task__file">
                             <a class="download-link" href="#">Home.psd</a>
                         </td>
-                        <td class="task__date"></td>
+                        <td class="task__date"><?=$value['date_of_imlementation'];?></td>
                     </tr>
+                    <?php endforeach; ?>
                     <?php if ($show_complete_tasks === 1): ?>
                     <tr class="tasks__item task task--completed">
                         <td class="task__select">
