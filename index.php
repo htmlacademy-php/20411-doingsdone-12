@@ -2,7 +2,7 @@
 // показывать или нет выполненные задачи
 $show_complete_tasks = rand(0, 1);
 
-$category;
+$category = ['Входящие', 'Учеба', 'Работа', 'Домашние дела', 'Авто'];
 ?>
 <!DOCTYPE html>
 <html lang="ru">
