@@ -2,7 +2,47 @@
 // показывать или нет выполненные задачи
 $show_complete_tasks = rand(0, 1);
 
-$category = ['Входящие', 'Учеба', 'Работа', 'Домашние дела', 'Авто'];
+$categories = ['Входящие', 'Учеба', 'Работа', 'Домашние дела', 'Авто'];
+
+$tasks = [
+    [
+        'name' => 'Собеседование в IT компании',
+        'date_of_imlementation' => '01.12.2019',
+        'category' => 'Работа',
+        'done' => false
+    ],
+    [
+        'name' => 'Выполнить тестовое задание',
+        'date_of_imlementation' => '25.12.2019',
+        'category' => 'Работа',
+        'done' => false
+    ],
+    [
+        'name' => 'Сделать задание первого раздела',
+        'date_of_imlementation' => '21.12.2019',
+        'category' => 'Учеба',
+        'done' => true
+    ],
+    [
+        'name' => 'Встреча с другом',
+        'date_of_imlementation' => '22.12.2019',
+        'category' => 'Входящие',
+        'done' => false
+    ],
+    [
+        'name' => 'Купить корм для кота',
+        'date_of_imlementation' => null,
+        'category' => 'Домашние дела',
+        'done' =>  false
+    ],
+    [
+        'name' => 'Заказать пиццу',
+        'date_of_imlementation' => 'null',
+        'category' => 'Домашние дела',
+        'done' => false
+    ]
+];
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -95,7 +135,7 @@ $category = ['Входящие', 'Учеба', 'Работа', 'Домашние
                         </td>
                         <td class="task__date"></td>
                     </tr>
-                    <?php if ($show_complete_tasks == 1): ?>
+                    <?php if ($show_complete_tasks === 1): ?>
                     <tr class="tasks__item task task--completed">
                         <td class="task__select">
                             <label class="checkbox task__checkbox">
