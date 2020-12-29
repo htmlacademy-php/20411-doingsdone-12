@@ -127,7 +127,7 @@ $tasks = [
 
                 <table class="tasks">
                    <?php foreach ($tasks as $key => $value): ?>
-                    <tr class="tasks__item task" <?php if ($show_complete_tasks === 1): "task--completed" ?>><?php endif; ?>
+                    <tr class="tasks__item task" <?php if ($value['done'] === true): "task--completed" ?><?php endif; ?>>
                         <td class="task__select">
                             <label class="checkbox task__checkbox">
                                 <input class="checkbox__input visually-hidden task__checkbox" type="checkbox" value="1">
@@ -135,7 +135,7 @@ $tasks = [
                             </label>
                         </td>
                         <td class="task__file">
-                            <a class="download-link" href="#">Home.psd</a>
+                            <a class="download-link" href="#">файл</a>
                         </td>
                         <td class="task__date"><?=$value['date_of_imlementation'];?></td>
                     </tr>
