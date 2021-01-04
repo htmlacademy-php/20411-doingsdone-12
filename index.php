@@ -7,37 +7,37 @@ $categories = ['Входящие', 'Учеба', 'Работа', 'Домашни
 $tasks = [
     [
         'name' => 'Собеседование в IT компании',
-        'date_of_imlementation' => '01.12.2019',
+        'date_of_implementation' => '01.12.2019',
         'category' => 'Работа',
         'done' => false
     ],
     [
         'name' => 'Выполнить тестовое задание',
-        'date_of_imlementation' => '25.12.2019',
+        'date_of_implementation' => '25.12.2019',
         'category' => 'Работа',
         'done' => false
     ],
     [
         'name' => 'Сделать задание первого раздела',
-        'date_of_imlementation' => '21.12.2019',
+        'date_of_implementation' => '21.12.2019',
         'category' => 'Учеба',
         'done' => true
     ],
     [
         'name' => 'Встреча с другом',
-        'date_of_imlementation' => '22.12.2019',
+        'date_of_implementation' => '22.12.2019',
         'category' => 'Входящие',
         'done' => false
     ],
     [
         'name' => 'Купить корм для кота',
-        'date_of_imlementation' => null,
+        'date_of_implementation' => null,
         'category' => 'Домашние дела',
         'done' =>  false
     ],
     [
         'name' => 'Заказать пиццу',
-        'date_of_imlementation' => null,
+        'date_of_implementation' => null,
         'category' => 'Домашние дела',
         'done' => false
     ]
@@ -127,6 +127,7 @@ $tasks = [
 
                 <table class="tasks">
                    <?php foreach ($tasks as $key => $value): ?>
+                   <?php if ($show_complete_tasks === 0 && $value['done'] == true) { continue; } ?>
                     <tr class="tasks__item task<?php if ($value['done'] == true): ?> task--completed<?php endif; ?>">
                         <td class="task__select">
                             <label class="checkbox task__checkbox">
@@ -137,7 +138,7 @@ $tasks = [
                         <td class="task__file">
                             <a class="download-link" href="#">файл</a>
                         </td>
-                        <td class="task__date"><?=$value['date_of_imlementation'];?></td>
+                        <td class="task__date"><?=$value['date_of_implementation'];?></td>
                     </tr>
                     <?php endforeach; ?>
 
