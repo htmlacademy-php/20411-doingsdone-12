@@ -44,16 +44,14 @@ $tasks = [
 ];
 
 function count_projects ($tasks, $projectName) {
-    $count;
+    $count = 0;
     foreach ($tasks as $key => $value) {
-        if ($value['project'] === projectName) {
+        if ($value['project'] === $projectName) {
             $count = $count + 1;
-        } else {
-            return 0;
         }
     }
+    return 0;
 };
-
 ?>
 <!DOCTYPE html>
 <html lang="ru">
