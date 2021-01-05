@@ -2,47 +2,56 @@
 // показывать или нет выполненные задачи
 $show_complete_tasks = rand(0, 1);
 
-$categories = ['Входящие', 'Учеба', 'Работа', 'Домашние дела', 'Авто'];
+$projects = ['Входящие', 'Учеба', 'Работа', 'Домашние дела', 'Авто'];
 
 $tasks = [
     [
         'name' => 'Собеседование в IT компании',
         'date_of_implementation' => '01.12.2019',
-        'category' => 'Работа',
+        'project' => 'Работа',
         'done' => false
     ],
     [
         'name' => 'Выполнить тестовое задание',
         'date_of_implementation' => '25.12.2019',
-        'category' => 'Работа',
+        'project' => 'Работа',
         'done' => false
     ],
     [
         'name' => 'Сделать задание первого раздела',
         'date_of_implementation' => '21.12.2019',
-        'category' => 'Учеба',
+        'project' => 'Учеба',
         'done' => true
     ],
     [
         'name' => 'Встреча с другом',
         'date_of_implementation' => '22.12.2019',
-        'category' => 'Входящие',
+        'project' => 'Входящие',
         'done' => false
     ],
     [
         'name' => 'Купить корм для кота',
         'date_of_implementation' => null,
-        'category' => 'Домашние дела',
+        'project' => 'Домашние дела',
         'done' =>  false
     ],
     [
         'name' => 'Заказать пиццу',
         'date_of_implementation' => null,
-        'category' => 'Домашние дела',
+        'project' => 'Домашние дела',
         'done' => false
     ]
 ];
 
+function count_projects ($tasks, $projectName) {
+    $count = 0;
+    foreach ($tasks as $key => $value) {
+        if ($value['project'] === $projectName) {
+            $count = $count + 1;
+        }
+    }
+    return $count;
+};
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -71,7 +80,6 @@ $tasks = [
                 <div class="main-header__side-item user-menu">
                     <div class="user-menu__data">
                         <p>Константин</p>
-
                         <a href="#">Выйти</a>
                     </div>
                 </div>
@@ -84,12 +92,14 @@ $tasks = [
 
                 <nav class="main-navigation">
                     <ul class="main-navigation__list">
-                       <?php foreach ($categories as $key => $value): ?>
+                       <?php foreach ($projects as $key => $value): ?>
                         <li class="main-navigation__list-item">
                             <a class="main-navigation__list-item-link" href="#">
                             <?=$value; ?>
                             </a>
-                            <span class="main-navigation__list-item-count">0</span>
+                            <span class="main-navigation__list-item-count">
+                                <?= count_projects ($tasks, $value);?>
+                            </span>
                         </li>
                         <?php endforeach; ?>
                     </ul>
