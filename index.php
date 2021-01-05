@@ -50,7 +50,7 @@ function count_projects ($tasks, $projectName) {
             $count = $count + 1;
         }
     }
-    return 0;
+    return $count;
 };
 ?>
 <!DOCTYPE html>
@@ -98,7 +98,7 @@ function count_projects ($tasks, $projectName) {
                             <?=$value; ?>
                             </a>
                             <span class="main-navigation__list-item-count">
-                                <?php count_projects ($tasks, $value);?>
+                                <?= count_projects ($tasks, $value);?>
                             </span>
                         </li>
                         <?php endforeach; ?>
