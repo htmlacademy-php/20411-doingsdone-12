@@ -44,8 +44,12 @@ $tasks = [
 ];
 
 function count_projects ($tasks, $projects) {
+    foreach ($tasks as $key => $value) {
+        if ($value['project']) {
 
-}
+        }
+    }
+};
 
 ?>
 <!DOCTYPE html>
