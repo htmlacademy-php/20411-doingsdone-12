@@ -70,7 +70,6 @@ function count_projects ($tasks, $projectName) {
 <div class="page-wrapper">
     <?php $main_content ?>
 </div>
-
 <footer class="main-footer">
     <div class="container">
         <div class="main-footer__copyright">
@@ -78,9 +77,7 @@ function count_projects ($tasks, $projectName) {
 
             <p>Веб-приложение для удобного ведения списка дел.</p>
         </div>
-
         <a class="main-footer__button button button--plus" href="pages/form-task.html">Добавить задачу</a>
-
         <div class="main-footer__social social">
             <span class="visually-hidden">Мы в соцсетях:</span>
             <a class="social__link social__link--facebook" href="#">
@@ -119,17 +116,14 @@ function count_projects ($tasks, $projectName) {
                 </svg>
             </a>
         </div>
-
         <div class="main-footer__developed-by">
             <span class="visually-hidden">Разработано:</span>
-
             <a href="https://htmlacademy.ru/intensive/php">
                 <img src="img/htmlacademy.svg" alt="HTML Academy" width="118" height="40">
             </a>
         </div>
     </div>
 </footer>
-
 <script src="flatpickr.js"></script>
 <script src="script.js"></script>
 </body>

@@ -15,7 +15,6 @@
                 </div>
             </div>
         </header>
-
         <div class="content">
             <section class="content__side">
                 <h2 class="content__side-heading">Проекты</h2>
@@ -38,7 +37,6 @@
                 <a class="button button--transparent button--plus content__side-button"
                    href="pages/form-project.html" target="project_add">Добавить проект</a>
             </section>
-
             <main class="content__main">
                 <h2 class="content__main-heading">Список задач</h2>
 
@@ -47,7 +45,6 @@
 
                     <input class="search-form__submit" type="submit" name="" value="Искать">
                 </form>
-
                 <div class="tasks-controls">
                     <nav class="tasks-switch">
                         <a href="/" class="tasks-switch__item tasks-switch__item--active">Все задачи</a>
@@ -64,7 +61,6 @@
                         <span class="checkbox__text">Показывать выполненные</span>
                     </label>
                 </div>
-
                 <table class="tasks">
                    <?php foreach ($tasks as $key => $value): ?>
                    <?php if ($show_complete_tasks === 0 && $value['done'] == true) { continue; } ?>
@@ -81,7 +77,6 @@
                         <td class="task__date"><?=$value['date_of_implementation'];?></td>
                     </tr>
                     <?php endforeach; ?>
-
                     <?php if ($show_complete_tasks === 1): ?>
                     <tr class="tasks__item task task--completed">
                         <td class="task__select">
@@ -94,7 +89,6 @@
                         <td class="task__controls"></td>
                     </tr>
                     <?php endif; ?>
-                    <!--показывать следующий тег <tr/>, если переменная $show_complete_tasks равна единице-->
                 </table>
             </main>
         </div>
