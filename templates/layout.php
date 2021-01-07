@@ -1,61 +1,5 @@
-<?php
-// показывать или нет выполненные задачи
-$show_complete_tasks = rand(0, 1);
-
-$projects = ['Входящие', 'Учеба', 'Работа', 'Домашние дела', 'Авто'];
-
-$tasks = [
-    [
-        'name' => 'Собеседование в IT компании',
-        'date_of_implementation' => '01.12.2019',
-        'project' => 'Работа',
-        'done' => false
-    ],
-    [
-        'name' => 'Выполнить тестовое задание',
-        'date_of_implementation' => '25.12.2019',
-        'project' => 'Работа',
-        'done' => false
-    ],
-    [
-        'name' => 'Сделать задание первого раздела',
-        'date_of_implementation' => '21.12.2019',
-        'project' => 'Учеба',
-        'done' => true
-    ],
-    [
-        'name' => 'Встреча с другом',
-        'date_of_implementation' => '22.12.2019',
-        'project' => 'Входящие',
-        'done' => false
-    ],
-    [
-        'name' => 'Купить корм для кота',
-        'date_of_implementation' => null,
-        'project' => 'Домашние дела',
-        'done' =>  false
-    ],
-    [
-        'name' => 'Заказать пиццу',
-        'date_of_implementation' => null,
-        'project' => 'Домашние дела',
-        'done' => false
-    ]
-];
-
-function count_projects ($tasks, $projectName) {
-    $count = 0;
-    foreach ($tasks as $key => $value) {
-        if ($value['project'] === $projectName) {
-            $count = $count + 1;
-        }
-    }
-    return $count;
-};
-?>
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
     <title><?= $current_page?></title>
@@ -63,18 +7,15 @@ function count_projects ($tasks, $projectName) {
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/flatpickr.min.css">
 </head>
-
 <body>
 <h1 class="visually-hidden">Дела в порядке</h1>
-
 <div class="page-wrapper">
-    <?php $main_content ?>
+    <?=$content;?>
 </div>
 <footer class="main-footer">
     <div class="container">
         <div class="main-footer__copyright">
             <p>© 2019, «Дела в порядке»</p>
-
             <p>Веб-приложение для удобного ведения списка дел.</p>
         </div>
         <a class="main-footer__button button button--plus" href="pages/form-task.html">Добавить задачу</a>
