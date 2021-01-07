@@ -49,4 +49,16 @@ function count_projects ($tasks, $projectName) {
     }
     return $count;
 };
+$page_content = include_template('main.php',
+                                 ['tasks_template' => $tasks,
+                                  'categories' => $category,
+                                  'show_complete_tasks' => $show_complete_tasks
+                                 ]);
+$layout_content = include_template('layout.php',
+[
+    'content' => $page_content,
+    'title' => 'Дела в порядке - Главная'
+]);
+
+print($layout_content);
 ?>
