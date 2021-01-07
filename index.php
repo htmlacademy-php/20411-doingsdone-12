@@ -40,15 +40,6 @@ $tasks = [
         'done' => false
     ]
 ];
-function count_projects ($tasks, $projectName) {
-    $count = 0;
-    foreach ($tasks as $key => $value) {
-        if ($value['project'] === $projectName) {
-            $count = $count + 1;
-        }
-    }
-    return $count;
-};
 $page_content = include_template('main.php',
                                  ['tasks_template' => $tasks,
                                   'categories' => $category,
