@@ -140,7 +140,7 @@ function include_template($name, array $data = []) { //шаблонизация 
     return $result;
 }
 
-function count_projects ($tasks, $projectName) { //функция которая считает кол проектов
+function count_projects ($tasks, $projectName) { //функция которая считает количество проектов
     $count = 0;
     foreach ($tasks as $key => $value) {
         if ($value['project'] === $projectName) {
