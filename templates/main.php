@@ -21,7 +21,7 @@
                     <?php foreach ($projects as $key => $value): ?>
                     <li class="main-navigation__list-item">
                         <a class="main-navigation__list-item-link" href="#">
-                            <?=$value; ?>
+                            <?=esc($value);?>
                         </a>
                         <span class="main-navigation__list-item-count">
                             <?= count_projects ($tasks, $value);?>
@@ -57,13 +57,13 @@
                     <td class="task__select">
                         <label class="checkbox task__checkbox">
                             <input class="checkbox__input visually-hidden task__checkbox" type="checkbox" value="1">
-                            <span class="checkbox__text"><?=$value['name'];?></span>
+                            <span class="checkbox__text"><?=esc($value['name']);?></span>
                         </label>
                     </td>
                     <td class="task__file">
                         <a class="download-link" href="#">файл</a>
                     </td>
-                    <td class="task__date"><?=$value['date_of_implementation'];?></td>
+                    <td class="task__date"><?=esc($value['date_of_implementation']);?></td>
                 </tr>
                 <?php endforeach; ?>
                 <?php if ($show_complete_tasks === 1): ?>
