@@ -126,19 +126,36 @@ function get_noun_plural_form (int $number, string $one, string $two, string $ma
  * @param array $data Ассоциативный массив с данными для шаблона
  * @return string Итоговый HTML
  */
-function include_template($name, array $data = []) {
+function include_template($name, array $data = []) { //шаблонизация проекта
     $name = 'templates/' . $name;
     $result = '';
 
     if (!is_readable($name)) {
         return $result;
     }
-
     ob_start();
     extract($data);
     require $name;
-
     $result = ob_get_clean();
-
     return $result;
 }
+
+function esc($str) {  // фильтрация данных
+	$text = htmlspecialchars($str);
+	//$text = strip_tags($str);
+
+	return $text;
+}
+
+function count_projects ($tasks, $projectName) { //функция которая считает количество проектов
+    $count = 0;
+    foreach ($tasks as $key => $value) {
+        if ($value['project'] === $projectName) {
+            $count = $count + 1;
+        }
+    }
+    return $count;
+};
+
+
+
