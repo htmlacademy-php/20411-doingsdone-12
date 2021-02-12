@@ -41,9 +41,6 @@ $tasks = [
     ]
 ];
 
-date_default_timezone_set("Europe/Moscow");
-
-
 $page_content = include_template('main.php',
                                  ['tasks' => $tasks,
                                   'projects' => $projects,

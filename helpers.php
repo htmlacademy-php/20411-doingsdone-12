@@ -20,6 +20,20 @@ function is_date_valid(string $date) : bool {
     return $dateTimeObj !== false && array_sum(date_get_last_errors()) === 0;
 }
 
+/*
+функция подсчета времени
+*/
+date_default_timezone_set("Europe/Moscow");
+
+function date_difference($dt_of_finishing_task) {
+    $dt_of_finishing_task_ts = strtotime($dt_of_finishing_task);
+    $ts = time();
+    $difference = $dt_of_finishing_task_ts - $ts;
+    $ts_24h = 60 * 60 * 24;
+    return $difference <= $ts_24h;
+}
+
+
 /**
  * Создает подготовленное выражение на основе готового SQL запроса и переданных данных
  *
