@@ -156,8 +156,6 @@ function include_template($name, array $data = []) { //шаблонизация 
 
 function esc($str) {  // фильтрация данных
 	$text = htmlspecialchars($str);
-	//$text = strip_tags($str);
-
 	return $text;
 }
 

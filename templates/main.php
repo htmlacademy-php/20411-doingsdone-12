@@ -51,14 +51,14 @@
                 </label>
             </div>
             <table class="tasks">
-
+<?= print $dt_of_finishing_task; ?>
                 <?php foreach ($tasks as $key => $value): ?>
                 <?php if ($show_complete_tasks === 0 && $value['done'] == true) { continue; } ?>
                 <tr class="tasks__item task
                    <?php if ($value['done'] == true): ?> task--completed<?php endif; ?>
                    <?php if (date_difference($value['date_of_implementation'] == true)): ?>task--important<?php endif; ?>
                    ">
-                   <?= print $dt_of_finishing_task; ?>
+
                     <td class="task__select">
                         <label class="checkbox task__checkbox">
                             <input class="checkbox__input visually-hidden task__checkbox" type="checkbox" value="1">
