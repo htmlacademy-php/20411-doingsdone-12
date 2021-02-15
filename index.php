@@ -17,7 +17,7 @@ $tasks = [
     ],
     [
         'name' => 'Сделать задание первого раздела',
-        'date_of_implementation' => '15.03.2021',
+        'date_of_implementation' => '14.03.2021',
         'project' => 'Учеба',
         'done' => true
     ],
@@ -29,7 +29,7 @@ $tasks = [
     ],
     [
         'name' => 'Купить корм для кота',
-        'date_of_implementation' => null,
+        'date_of_implementation' => '14.03.2021',
         'project' => 'Домашние дела',
         'done' =>  false
     ],
