@@ -29,7 +29,7 @@ $tasks = [
     ],
     [
         'name' => 'Купить корм для кота',
-        'date_of_implementation' => '14.03.2021',
+        'date_of_implementation' => '13.03.2021',
         'project' => 'Домашние дела',
         'done' =>  false
     ],
