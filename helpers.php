@@ -26,14 +26,14 @@ function is_date_valid(string $date) : bool {
 date_default_timezone_set("Europe/Moscow");
 
 function date_difference($dt_of_finishing_task) {
-    if ($dt_of_finishing_task_ts > 0) {
-        $dt_of_finishing_task_ts = strtotime($dt_of_finishing_task);
-        $ts = time();
+    $dt_of_finishing_task_ts = strtotime($dt_of_finishing_task);
+    $ts = time();
+    $ts_24h = 60 * 60 * 24;
+    if ($dt_of_finishing_task_ts >= $ts_24h) {
         $difference = $dt_of_finishing_task_ts - $ts;
-        $ts_24h = 60 * 60 * 24;
-        return $difference <= $ts_24h;
+        return $difference >= $ts_24h;
+        }
     }
-}
 
 
 /**

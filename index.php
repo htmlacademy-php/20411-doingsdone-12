@@ -5,25 +5,25 @@ $projects = ['Входящие', 'Учеба', 'Работа', 'Домашние
 $tasks = [
     [
         'name' => 'Собеседование в IT компании',
-        'date_of_implementation' => '01.12.2019',
+        'date_of_implementation' => '19.03.2021',
         'project' => 'Работа',
         'done' => false
     ],
     [
         'name' => 'Выполнить тестовое задание',
-        'date_of_implementation' => '25.12.2019',
+        'date_of_implementation' => '15.03.2021',
         'project' => 'Работа',
         'done' => false
     ],
     [
         'name' => 'Сделать задание первого раздела',
-        'date_of_implementation' => '21.12.2019',
+        'date_of_implementation' => '15.03.2021',
         'project' => 'Учеба',
         'done' => true
     ],
     [
         'name' => 'Встреча с другом',
-        'date_of_implementation' => '22.12.2019',
+        'date_of_implementation' => '16.03.2021',
         'project' => 'Входящие',
         'done' => false
     ],
