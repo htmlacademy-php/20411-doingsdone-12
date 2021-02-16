@@ -30,11 +30,11 @@ function date_difference($dt_of_finishing_task) {
     $ts = time();
     $ts_24h = 60 * 60 * 24;
     $deadline = $ts + $ts_24h;
-    if ($ts < $dt_of_finishing_task_ts && $dt_of_finishing_task_ts < $deadline) {
-        return 1;
+    if (0 < $dt_of_finishing_task_ts && $ts < $dt_of_finishing_task_ts && $dt_of_finishing_task_ts < $deadline) {
+        return true;
     }
-    return 0;
-    }
+    return false;
+}
 
 
 /**
