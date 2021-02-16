@@ -29,9 +29,8 @@ function date_difference($dt_of_finishing_task) {
     $dt_of_finishing_task_ts = strtotime($dt_of_finishing_task);
     $ts = time();
     $ts_24h = 60 * 60 * 24;
-
-    if ($dt_of_finishing_task_ts > $ts) {
-        $difference = $dt_of_finishing_task_ts - $ts;
+    $deadline = $ts + $ts_24h;
+    if (0 < $dt_of_finishing_task_ts && $dt_of_finishing_task_ts < $deadline) {
         return 1;
     }
     return 0;
