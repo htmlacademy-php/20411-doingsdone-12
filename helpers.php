@@ -20,6 +20,23 @@ function is_date_valid(string $date) : bool {
     return $dateTimeObj !== false && array_sum(date_get_last_errors()) === 0;
 }
 
+/*
+функция подсчета времени
+*/
+date_default_timezone_set("Europe/Moscow");
+
+function date_difference($dt_of_finishing_task) {
+    $dt_of_finishing_task_ts = strtotime($dt_of_finishing_task);
+    $ts = time();
+    $ts_24h = 60 * 60 * 24;
+    $deadline = $ts + $ts_24h;
+    if (0 < $dt_of_finishing_task_ts && $dt_of_finishing_task_ts < $deadline) {
+        return true;
+    }
+    return false;
+}
+
+
 /**
  * Создает подготовленное выражение на основе готового SQL запроса и переданных данных
  *
@@ -142,8 +159,6 @@ function include_template($name, array $data = []) { //шаблонизация 
 
 function esc($str) {  // фильтрация данных
 	$text = htmlspecialchars($str);
-	//$text = strip_tags($str);
-
 	return $text;
 }
 
