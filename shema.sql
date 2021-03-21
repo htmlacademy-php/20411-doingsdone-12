@@ -8,14 +8,14 @@ CREATE TABLE users (
   id int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   email char(64) NOT NULL,
   password char(255) NOT NULL,
-  name char(64) NOT NULL,
+  name varchar(255) NOT NULL,
   date_registration TIMESTAMP(0) DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
 
 CREATE TABLE projects (
   id int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   user_id int(11) NOT NULL,
-  project_name char(128) DEFAULT NULL,
+  project_name varchar(255) DEFAULT NULL,
   FOREIGN KEY (user_id)  REFERENCES users(id)
 );
 
@@ -24,8 +24,9 @@ CREATE TABLE IF NOT EXISTS tasks (
   project_id int(11) NOT NULL,
   date_creation TIMESTAMP(0) DEFAULT CURRENT_TIMESTAMP,
   status boolean NOT NULL DEFAULT 0,
-  task_name char(64) NOT NULL,
+  task_name varchar(255) NOT NULL,
   file_url varchar(255) DEFAULT NULL,
   date_of_task TIMESTAMP(0) DEFAULT NULL,
-  FOREIGN KEY (project_id)  REFERENCES projects(id)
+  FOREIGN KEY (project_id)  REFERENCES projects(id),
+  FOREIGN KEY (user_id)  REFERENCES users(id)
 );
