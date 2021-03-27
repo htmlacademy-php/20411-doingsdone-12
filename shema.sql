@@ -6,7 +6,6 @@ USE doings_bd;
 
 CREATE TABLE `users` (
   `id` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
   `email` char(64) NOT NULL,
   `password` char(255) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -22,6 +21,7 @@ CREATE TABLE `projects` (
 
 CREATE TABLE `tasks` (
   `id` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
   `project_id` int(11) NOT NULL,
   `date_creation` TIMESTAMP(0) DEFAULT CURRENT_TIMESTAMP,
   `status` boolean NOT NULL DEFAULT 0,
