@@ -10,11 +10,12 @@ INSERT INTO projects (id, user_id, project_name) VALUES
 (4, 2, 'Домашние дела'),
 (5, 3, 'Авто');
 
-INSERT INTO tasks (id, user_id, project_id, date_creation, status, task_name, date_of_task) VALUES
+INSERT INTO tasks (id, user_id, project_id, date_creation, status, task_name, date_of_implementation) VALUES
 (1, 2, 1, 03.05.2021, false, 'Собеседование в IT компании', 19.02.2021),
 (2, 1, 1, 07.05.2021, false, 'Выполнить тестовое задание', 15.02.2021),
 (3, 1, 2, 08.05.2021, true, 'Сделать задание первого раздела', 14.02.2021),
 (4, 1, 3, 09.05.2021, false, 'Встреча с другом', 16.02.2021),
 (5, 1, 4, 09.05.2021, false, 'Купить корм для кота', 16.02.2021),
 (6, 1, 4, 09.05.2021, false, 'Заказать пиццу', null);
+
 

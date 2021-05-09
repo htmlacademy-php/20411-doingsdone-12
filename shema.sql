@@ -27,7 +27,7 @@ CREATE TABLE `tasks` (
   `status` boolean NOT NULL DEFAULT 0,
   `task_name` varchar(255) NOT NULL,
   `file_url` varchar(255) DEFAULT NULL,
-  `date_of_task` TIMESTAMP(0) DEFAULT NULL,
+  `date_of_implementation` TIMESTAMP(0) DEFAULT NULL,
    FOREIGN KEY (project_id)  REFERENCES projects(id),
    FOREIGN KEY (user_id)  REFERENCES users(id)
 );
