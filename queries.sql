@@ -1,7 +1,7 @@
-INSERT INTO users (id, email, password, name, date_registration) VALUES
-(1, 'vasya@mail.ru', 'password', 'lohpidr', 21.05.2010),
-(2, 'petya@mail.ru', 'qwerty', 'bulochka', 11.05.2015),
-(3, 'user@mail.ru', 'flat-surv-28195', 'piska', 01.10.2017);
+INSERT INTO users (email, password, name, date_registration) VALUES
+('vasya@mail.ru', 'password', 'lohpidr', 21.05.2010),
+('petya@mail.ru', 'qwerty', 'bulochka', 11.05.2015),
+('user@mail.ru', 'flat-surv-28195', 'piska', 01.10.2017);
 
 INSERT INTO projects (id, user_id, project_name) VALUES
 (1, 2, 'Работа'),
