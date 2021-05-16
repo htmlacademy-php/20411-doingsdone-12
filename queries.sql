@@ -18,12 +18,12 @@ INSERT INTO tasks (user_id, project_id, date_creation, status, task_name, date_o
 (1, 4, 09.05.2021, false, 'Купить корм для кота', 16.02.2021),
 (1, 4, 09.05.2021, false, 'Заказать пиццу', null);
 
-SELECT project_name FROM projects WHERE user_id = 2;
+SELECT * FROM projects WHERE user_id = 2;
 
 SELECT task_name FROM tasks where project_id = 4;
 
-INSERT INTO tasks SET status = true WHERE project_id = 2;
+UPDATE tasks  SET status = true WHERE id = 2;
 
-INSERT INTO tasks SET task_name = "купить суси" WHERE project_id = 6;
+UPDATE tasks SET task_name = "купить суси" WHERE project_id = 6;
 
 
