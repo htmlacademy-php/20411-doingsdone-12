@@ -1,5 +1,18 @@
 <?php
 require_once ('helpers.php');
+
+$con = mysqli_connect("172.21.0.1", "user", "pass", "doings_bd");
+
+mysqli_set_charset($con, "utf8");
+
+if ($con == false) {
+   print("Ошибка подключения: " . mysqli_connect_error());
+}
+else {
+   print("Соединение установлено");
+	// выполнение запросов
+}
+
 $show_complete_tasks = rand(0, 1);
 $projects = ['Входящие', 'Учеба', 'Работа', 'Домашние дела', 'Авто'];
 $tasks = [
