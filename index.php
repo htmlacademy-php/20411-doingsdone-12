@@ -1,11 +1,7 @@
 <?php
 require_once ('helpers.php');
 
-$projects = [];
-
 $con = mysqli_connect("172.21.0.1", "user", "pass", "doings_bd");
-
-
 
 mysqli_set_charset($con, "utf8");
 
