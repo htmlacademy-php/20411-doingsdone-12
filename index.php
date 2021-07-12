@@ -1,7 +1,23 @@
 <?php
 require_once ('helpers.php');
+
+$con = mysqli_connect("172.21.0.1", "user", "pass", "doings_bd");
+
+mysqli_set_charset($con, "utf8");
+
+if ($con == false) {
+   print("Ошибка подключения: " . mysqli_connect_error());
+}
+else {
+    $list_of_users_projects = 'SELECT `id`, `project_name` FROM projects';
+    $result = mysqli_query($con, $list_of_users_projects);
+
+    if($result) {
+        $projects = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    }
+}
+
 $show_complete_tasks = rand(0, 1);
-$projects = ['Входящие', 'Учеба', 'Работа', 'Домашние дела', 'Авто'];
 $tasks = [
     [
         'name' => 'Собеседование в IT компании',
