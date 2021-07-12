@@ -1,9 +1,11 @@
 <?php
 require_once ('helpers.php');
 
-
+$projects = [];
 
 $con = mysqli_connect("172.21.0.1", "user", "pass", "doings_bd");
+
+
 
 mysqli_set_charset($con, "utf8");
 
@@ -19,7 +21,6 @@ else {
     }
 }
 
-$projects = [];
 $show_complete_tasks = rand(0, 1);
 $tasks = [
     [
