@@ -21,7 +21,7 @@
                     <?php foreach ($projects as $key => $value): ?>
                     <li class="main-navigation__list-item">
                         <a class="main-navigation__list-item-link" href="#">
-                            <?=$value;?>
+                            <?=$value['project_name']?>
                         </a>
                         <span class="main-navigation__list-item-count">
                             <?= count_projects ($tasks, $value);?>
