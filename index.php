@@ -15,11 +15,18 @@ else {
     if($result) {
         $projects = mysqli_fetch_all($result, MYSQLI_ASSOC);
     }
+    else {
+        print("Ошибка. Не удалось отобразить проекты пользователя!");
+    }
+
     $list_of_users_tasks = 'SELECT `id`, `project_id`, `status`, `task_name`, `file_url`, `date_of_implementation` FROM tasks where user_id = 1';
     $result2 = mysqli_query($con, $list_of_users_tasks);
 
     if ($result2){
         $tasks = mysqli_fetch_all($result2, MYSQLI_ASSOC);
+    }
+    else {
+        print("Ошибка. Не удалось отобразить задачи пользователя!");
     }
 }
 
