@@ -9,7 +9,9 @@ if ($con == false) {
    print("Ошибка подключения: " . mysqli_connect_error());
 }
 else {
-    $list_of_users_projects = 'SELECT `id`, `project_name` FROM projects';
+    $list_of_users_projects = 'SELECT `id`, `project_name` FROM projects where user_id = 1';
+    $list_of_users_tasks = 'SELECT `id`, `project_id`, `status`, `task_name`, `file_url`, `date_of_implementation` FROM tasks where user_id = 1';
+
     $result = mysqli_query($con, $list_of_users_projects);
 
     if($result) {
