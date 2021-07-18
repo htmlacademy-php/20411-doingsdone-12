@@ -10,16 +10,21 @@ if ($con == false) {
 }
 else {
     $list_of_users_projects = 'SELECT `id`, `project_name` FROM projects where user_id = 1';
-    $list_of_users_tasks = 'SELECT `id`, `project_id`, `status`, `task_name`, `file_url`, `date_of_implementation` FROM tasks where user_id = 1';
-
     $result = mysqli_query($con, $list_of_users_projects);
 
     if($result) {
         $projects = mysqli_fetch_all($result, MYSQLI_ASSOC);
     }
+    $list_of_users_tasks = 'SELECT `id`, `project_id`, `status`, `task_name`, `file_url`, `date_of_implementation` FROM tasks where user_id = 1';
+    $result2 = mysqli_query($con, $list_of_users_tasks);
+
+    if ($result2){
+        $tasks = mysqli_fetch_all($result2, MYSQLI_ASSOC);
+    }
 }
 
 $show_complete_tasks = rand(0, 1);
+/*
 $tasks = [
     [
         'name' => 'Собеседование в IT компании',
@@ -58,6 +63,7 @@ $tasks = [
         'done' => false
     ]
 ];
+*/
 
 $page_content = include_template('main.php',
                                  ['tasks' => $tasks,

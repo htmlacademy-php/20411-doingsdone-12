@@ -57,17 +57,16 @@
                    <?php if ($value['done'] == true): ?> task--completed<?php endif; ?>
                    <?php if (date_difference($value['date_of_implementation']) == 1): ?>task--important<?php endif; ?>
                    ">
-
                     <td class="task__select">
                         <label class="checkbox task__checkbox">
                             <input class="checkbox__input visually-hidden task__checkbox" type="checkbox" value="1">
-                            <span class="checkbox__text"><?=esc($value['name']);?></span>
+                            <span class="checkbox__text"><?=$value['name'];?></span>
                         </label>
                     </td>
                     <td class="task__file">
                         <a class="download-link" href="#">файл</a>
                     </td>
-                    <td class="task__date"><?=esc($value['date_of_implementation']);?></td>
+                    <td class="task__date"><?=$value['date_of_implementation'];?></td>
                 </tr>
                 <?php endforeach; ?>
                 <?php if ($show_complete_tasks === 1): ?>
