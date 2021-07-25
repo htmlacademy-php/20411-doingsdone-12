@@ -1,7 +1,37 @@
 <?php
 require_once ('helpers.php');
+
+$con = mysqli_connect("172.21.0.1", "user", "pass", "doings_bd");
+
+mysqli_set_charset($con, "utf8");
+
+if ($con == false) {
+   print("Ошибка подключения: " . mysqli_connect_error());
+}
+else {
+    $list_of_users_projects = 'SELECT `id`, `project_name` FROM projects where user_id = 1';
+    $result = mysqli_query($con, $list_of_users_projects);
+
+    if($result) {
+        $projects = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    }
+    else {
+        print("Ошибка. Не удалось отобразить проекты пользователя!");
+    }
+
+    $list_of_users_tasks = 'SELECT `id`, `project_id`, `status`, `task_name`, `file_url`, `date_of_implementation` FROM tasks where user_id = 1';
+    $result2 = mysqli_query($con, $list_of_users_tasks);
+
+    if ($result2){
+        $tasks = mysqli_fetch_all($result2, MYSQLI_ASSOC);
+    }
+    else {
+        print("Ошибка. Не удалось отобразить задачи пользователя!");
+    }
+}
+
 $show_complete_tasks = rand(0, 1);
-$projects = ['Входящие', 'Учеба', 'Работа', 'Домашние дела', 'Авто'];
+/*
 $tasks = [
     [
         'name' => 'Собеседование в IT компании',
@@ -40,6 +70,7 @@ $tasks = [
         'done' => false
     ]
 ];
+*/
 
 $page_content = include_template('main.php',
                                  ['tasks' => $tasks,

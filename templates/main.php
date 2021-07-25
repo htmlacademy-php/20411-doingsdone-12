@@ -21,7 +21,7 @@
                     <?php foreach ($projects as $key => $value): ?>
                     <li class="main-navigation__list-item">
                         <a class="main-navigation__list-item-link" href="#">
-                            <?=esc($value);?>
+                            <?=esc($value['project_name'])?>
                         </a>
                         <span class="main-navigation__list-item-count">
                             <?= count_projects ($tasks, $value);?>
@@ -57,7 +57,6 @@
                    <?php if ($value['done'] == true): ?> task--completed<?php endif; ?>
                    <?php if (date_difference($value['date_of_implementation']) == 1): ?>task--important<?php endif; ?>
                    ">
-
                     <td class="task__select">
                         <label class="checkbox task__checkbox">
                             <input class="checkbox__input visually-hidden task__checkbox" type="checkbox" value="1">

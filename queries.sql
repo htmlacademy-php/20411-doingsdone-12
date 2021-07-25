@@ -8,7 +8,7 @@ INSERT INTO projects (user_id, project_name) VALUES
 (1, 'Учеба'),
 (2, 'Входящие'),
 (2, 'Домашние дела'),
-(3, 'Авто');
+(3, 'auto');
 
 INSERT INTO tasks (user_id, project_id, date_creation, status, task_name, date_of_implementation) VALUES
 (2, 1, "2021-02-18 10:01:03", false, 'Собеседование в IT компании', "2021-02-19 10:01:03"),
@@ -16,7 +16,7 @@ INSERT INTO tasks (user_id, project_id, date_creation, status, task_name, date_o
 (1, 2, "2021-05-20 12:31:18", true, 'Сделать задание первого раздела', "2021-05-21 12:31:18"),
 (1, 3, "2010-01-29 13:51:03", false, 'Встреча с другом', "2010-01-30 13:51:03"),
 (1, 4, "2016-09-10 13:51:03", false, 'Купить корм для кота', "2016-09-30 13:51:03"),
-(1, 4, "2016-09-30 13:51:03", false, 'Заказать пиццу', null);
+(1, 4, "2016-09-30 13:51:03", false, 'Заказать суси', null);
 
 SELECT * FROM projects WHERE user_id = 2;
 
