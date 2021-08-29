@@ -35,7 +35,15 @@ else {
     if ($tab == $value['project_name']) {
     	$sort_field = 'dt_add';
 	}
-    $sql = 'SELECT * FROM TASKS where user_id = 1';
+    $sql_show_users_tasks = 'SELECT * FROM TASKS where user_id = 1';
+    $res_show_users_tasks = mysqli_query($con, $sql_show_users_tasks);
+    if($result) {
+        $users_tasks = mysqli_fetch_all($result3, MYSQLI_ASSOC);
+    }
+    else {
+        print("Ошибка. Не удалось отобразить задания пользователя!");
+    }
+
 
 }
 
