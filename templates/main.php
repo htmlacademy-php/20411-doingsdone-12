@@ -23,7 +23,8 @@
                         <a class="main-navigation__list-item-link
                           <?php if ($result3 === 1): ?>
                            main-navigation__list-item--active"
-                           <?php endif; ?>>
+                           <?php endif; ?>
+                           >
                             href="<?="/?=".esc($value["project_name"])?>">
                             <?=esc($value['project_name'])?>
                         </a>
