@@ -28,6 +28,15 @@ else {
     else {
         print("Ошибка. Не удалось отобразить задачи пользователя!");
     }
+//задание 6.1
+
+    $sort_tasks = 'show_users_tasks';
+    $tab = filter_input(INPUT_GET, 'tab');
+    if ($tab == $value['project_name']) {
+    	$sort_field = 'dt_add';
+	}
+    $sql = 'SELECT * FROM TASKS where user_id = 1';
+
 }
 
 $show_complete_tasks = rand(0, 1);
