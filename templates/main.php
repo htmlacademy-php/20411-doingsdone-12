@@ -20,7 +20,11 @@
                 <ul class="main-navigation__list">
                     <?php foreach ($projects as $key => $value): ?>
                     <li class="main-navigation__list-item">
-                        <a class="main-navigation__list-item-link" href="<?="/?=".esc($value["project_name"])?>">
+                        <a class="main-navigation__list-item-link
+                          <?php if ($result3 === 1): ?>
+                           main-navigation__list-item--active"
+                           <?php endif; ?>>
+                            href="<?="/?=".esc($value["project_name"])?>">
                             <?=esc($value['project_name'])?>
                         </a>
                         <span class="main-navigation__list-item-count">
