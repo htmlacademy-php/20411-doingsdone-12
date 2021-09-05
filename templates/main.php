@@ -21,7 +21,7 @@
                     <?php foreach ($projects as $key => $value): ?>
                     <li class="main-navigation__list-item">
                         <a class="main-navigation__list-item-link
-                          <?php if ($result3 === 1): ?>
+                          <?php if ($res_show_users_tasks === 1): ?>
                            main-navigation__list-item--active"
                            <?php endif; ?>
                            >
