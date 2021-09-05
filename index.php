@@ -37,11 +37,11 @@ else {
 	}
     $sql_show_users_tasks = 'SELECT * FROM TASKS where user_id = 1';
     $res_show_users_tasks = mysqli_query($con, $sql_show_users_tasks);
-    if($result3) {
-        $users_tasks = mysqli_fetch_all($result3, MYSQLI_ASSOC);
+    if($res_show_users_tasks) {
+        $users_tasks = mysqli_fetch_all($res_show_users_tasks, MYSQLI_ASSOC);
     }
     else {
-        print("Ошибка. Не удалось отобразить задания пользователя!");
+        $content = include_template('error.php', ['error' => mysqli_error($link)]);;
     }
 
 
