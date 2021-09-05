@@ -41,10 +41,10 @@ else {
         $users_tasks = mysqli_fetch_all($res_show_users_tasks, MYSQLI_ASSOC);
     }
     else {
-        $content = include_template('error.php', ['error' => mysqli_error($link)]);;
+        $content = include_template('error.php',
+                                    ['error' => mysqli_error($con)]
+                                   );
     }
-
-
 }
 
 $show_complete_tasks = rand(0, 1);
