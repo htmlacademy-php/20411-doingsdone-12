@@ -25,9 +25,6 @@ else {
         $list_of_users_tasks.=' and id='.$project_id;
     }
     $result2 = mysqli_query($con, $list_of_users_tasks);
-
-
-
     if ($result2){
         $tasks = mysqli_fetch_all($result2, MYSQLI_ASSOC);
     }
