@@ -28,7 +28,7 @@
                             <?=esc($value['project_name'])?>
                         </a>
                         <span class="main-navigation__list-item-count">
-                            <?= count_projects ($tasks, $value);?>
+                            <?= count_projects ($tasks, $value); var_dump($value);?>
                         </span>
                     </li>
                     <?php endforeach; ?>
