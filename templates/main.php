@@ -57,6 +57,7 @@
             <table class="tasks">
                 <?php foreach ($tasks as $key => $value): ?>
                 <?php if ($show_complete_tasks === 0 && $value['done'] == true) { continue; } ?>
+                <?php if ($active_project_id != null && $value['project_id'] != $active_project_id) {continue;} ?>
                 <tr class="tasks__item task
                    <?php if ($value['done'] == true): ?> task--completed<?php endif; ?>
                    <?php if (date_difference($value['date_of_implementation']) == 1): ?>task--important<?php endif; ?>

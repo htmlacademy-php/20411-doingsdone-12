@@ -21,9 +21,9 @@ else {
 
     $list_of_users_tasks = 'SELECT `id`, `project_id`, `status`, `task_name`, `file_url`, `date_of_implementation` FROM tasks where user_id = 1';
     $project_id = filter_input(INPUT_GET, 'id');
-    if ($project_id != null && is_numeric($project_id)) {
-        $list_of_users_tasks.=' and id='.$project_id;
-    }
+    //if ($project_id != null && is_numeric($project_id)) {
+        //$list_of_users_tasks.=' and id='.$project_id;
+    //}
     $result2 = mysqli_query($con, $list_of_users_tasks);
     if ($result2){
         $tasks = mysqli_fetch_all($result2, MYSQLI_ASSOC);
@@ -46,7 +46,7 @@ else {
     */
 }
 
-$show_complete_tasks = rand(0, 1);
+$show_complete_tasks = rand (0, 1);
 
 $page_content = include_template('main.php',
                                  ['tasks' => $tasks,
