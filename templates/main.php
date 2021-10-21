@@ -20,7 +20,11 @@
                 <ul class="main-navigation__list">
                     <?php foreach ($projects as $key => $value): ?>
                     <li class="main-navigation__list-item">
-                        <a class="main-navigation__list-item-link" href="#">
+                        <a class="main-navigation__list-item-link
+                          <?php if ($active_project_id === $value["id"]): ?>
+                           main-navigation__list-item--active
+                           <?php endif;?>"
+                            href="<?='/?id='.esc($value["id"])?>">
                             <?=esc($value['project_name'])?>
                         </a>
                         <span class="main-navigation__list-item-count">
@@ -53,6 +57,7 @@
             <table class="tasks">
                 <?php foreach ($tasks as $key => $value): ?>
                 <?php if ($show_complete_tasks === 0 && $value['done'] == true) { continue; } ?>
+                <?php if ($active_project_id != null && $value['project_id'] != $active_project_id) {continue;} ?>
                 <tr class="tasks__item task
                    <?php if ($value['done'] == true): ?> task--completed<?php endif; ?>
                    <?php if (date_difference($value['date_of_implementation']) == 1): ?>task--important<?php endif; ?>
@@ -60,7 +65,7 @@
                     <td class="task__select">
                         <label class="checkbox task__checkbox">
                             <input class="checkbox__input visually-hidden task__checkbox" type="checkbox" value="1">
-                            <span class="checkbox__text"><?=esc($value['name']);?></span>
+                            <span class="checkbox__text"><?=esc($value['task_name']);?></span>
                         </label>
                     </td>
                     <td class="task__file">

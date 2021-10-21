@@ -20,60 +20,37 @@ else {
     }
 
     $list_of_users_tasks = 'SELECT `id`, `project_id`, `status`, `task_name`, `file_url`, `date_of_implementation` FROM tasks where user_id = 1';
+    $project_id = filter_input(INPUT_GET, 'id');
+    //if ($project_id != null && is_numeric($project_id)) {
+        //$list_of_users_tasks.=' and id='.$project_id;
+    //}
     $result2 = mysqli_query($con, $list_of_users_tasks);
-
     if ($result2){
         $tasks = mysqli_fetch_all($result2, MYSQLI_ASSOC);
     }
     else {
-        print("Ошибка. Не удалось отобразить задачи пользователя!");
+        $content = include_template('error.php',
+                                    ['error' => mysqli_error($con)]
+                                   );
     }
+//задание 6.1
+/*
+    $sort_tasks = 'show_users_tasks';
+    $project_id = filter_input(INPUT_GET, 'id');
+    var_dump($project_id);
+    $sql_show_users_tasks = 'SELECT * FROM TASKS where user_id = 1 and id='.$project_id;
+    $res_show_users_tasks = mysqli_query($con, $sql_show_users_tasks);
+    if($res_show_users_tasks) {
+        $users_tasks = mysqli_fetch_all($res_show_users_tasks, MYSQLI_ASSOC);
+    }
+    */
 }
 
-$show_complete_tasks = rand(0, 1);
-/*
-$tasks = [
-    [
-        'name' => 'Собеседование в IT компании',
-        'date_of_implementation' => '19.02.2021',
-        'project' => 'Работа',
-        'done' => false
-    ],
-    [
-        'name' => 'Выполнить тестовое задание',
-        'date_of_implementation' => '15.02.2021',
-        'project' => 'Работа',
-        'done' => false
-    ],
-    [
-        'name' => 'Сделать задание первого раздела',
-        'date_of_implementation' => '14.02.2021',
-        'project' => 'Учеба',
-        'done' => true
-    ],
-    [
-        'name' => 'Встреча с другом',
-        'date_of_implementation' => '16.02.2021',
-        'project' => 'Входящие',
-        'done' => false
-    ],
-    [
-        'name' => 'Купить корм для кота',
-        'date_of_implementation' => '17.02.2021',
-        'project' => 'Домашние дела',
-        'done' =>  false
-    ],
-    [
-        'name' => 'Заказать пиццу',
-        'date_of_implementation' => null,
-        'project' => 'Домашние дела',
-        'done' => false
-    ]
-];
-*/
+$show_complete_tasks = rand (0, 1);
 
 $page_content = include_template('main.php',
                                  ['tasks' => $tasks,
+                                  'active_project_id' => $project_id,
                                   'projects' => $projects,
                                   'show_complete_tasks' => $show_complete_tasks
                                  ]);

@@ -162,10 +162,14 @@ function esc($str) {  // фильтрация данных
 	return $text;
 }
 
-function count_projects ($tasks, $projectName) { //функция которая считает количество проектов
+function count_projects ($tasks, $project) { //функция которая считает количество проектов
+   // var_dump($project);
+    //var_dump($tasks);
     $count = 0;
     foreach ($tasks as $key => $value) {
-        if ($value['project'] === $projectName) {
+        //var_dump($value['project_id']);
+        //var_dump($project['id']);
+        if ($value['project_id'] == $project['id']) {
             $count = $count + 1;
         }
     }

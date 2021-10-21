@@ -6,9 +6,9 @@ INSERT INTO users (email, password, name, date_registration) VALUES
 INSERT INTO projects (user_id, project_name) VALUES
 (2, 'Работа'),
 (1, 'Учеба'),
-(2, 'Входящие'),
-(2, 'Домашние дела'),
-(3, 'auto');
+(1, 'Входящие'),
+(1, 'Домашние дела'),
+(1, 'auto');
 
 INSERT INTO tasks (user_id, project_id, date_creation, status, task_name, date_of_implementation) VALUES
 (2, 1, "2021-02-18 10:01:03", false, 'Собеседование в IT компании', "2021-02-19 10:01:03"),
